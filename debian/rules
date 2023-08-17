@@ -1,4 +1,50 @@
 #!/usr/bin/make -f
 
+DOCS_SRC = README.md $(wildcard doc/markdown/*.md)
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+DOCS = $(DOCS_SRC:md=html) $(DOCS_SRC:md=txt)
+CHANGELOGS = CHANGELOG.html CHANGELOG.txt
+endif
+
+# Workaround CMake not using CPPFLAGS.
+export DEB_CXXFLAGS_MAINT_APPEND = $(shell dpkg-buildflags --get CPPFLAGS)
+
+override_dh_clean:
+	dh_clean -- $(DOCS) $(CHANGELOGS)
+
+override_dh_auto_configure:
+	# CMAKE_EXPORT_COMPILE_COMMANDS=ON - "Enable output of compile commands during generation" => verboser build
+	# CMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -std=c++11" - Flags in use by upstream
+	# CMAKE_INSTALL_LIBDIR=/usr/lib - Forces the cmake configuration in the non-multiarch directory
+	# CMAKE_BUILD_TYPE=Debug - We want to see it all
+	dh_auto_configure -- -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+	                     -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -std=c++11 $(shell dpkg-buildflags --get CXXFLAGS)" \
+	                     -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+	                     -DCMAKE_BUILD_TYPE=Debug
+
+execute_after_dh_auto_build: $(DOCS) $(CHANGELOGS)
+
+override_dh_auto_test:
+	# Clearer output for tests
+	dh_auto_test --no-parallel -- ARGS\+=--output-on-failure
+
+override_dh_install:
+	dh_install
+	# Verify that the mandatory files are really installed
+	[ -r debian/doctest-dev/usr/include/doctest/doctest.h ]
+	[ -x debian/doctest-dev/usr/lib/cmake/doctest ]
+
+override_dh_installdocs:
+	dh_installdocs -- $(DOCS)
+
+override_dh_installchangelogs:
+	dh_installchangelogs -- $(CHANGELOGS)
+
+%.html: %.md
+	cmark-gfm $< > $@
+
+%.txt: %.md
+	cmark-gfm --to plaintext $< > $@
+
 %:
 	dh $@

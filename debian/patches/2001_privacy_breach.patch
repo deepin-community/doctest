@@ -1,0 +1,69 @@
+Description: avoid privacy breaches in documentation
+Author: Jonas Smedegaard <dr@jones.dk>
+Last-Update: 2022-01-14
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/doc/markdown/readme.md
++++ b/doc/markdown/readme.md
+@@ -28,8 +28,8 @@
+ 
+ This library is free, and will stay free but needs your support to sustain its development. There are lots of [**new features**](https://github.com/doctest/doctest/issues/600) and maintenance to do. If you work for a company using **doctest** or have the means to do so, please consider financial support.
+ 
+-[![Patreon](https://cloud.githubusercontent.com/assets/8225057/5990484/70413560-a9ab-11e4-8942-1a63607c0b00.png)](http://www.patreon.com/onqtam)
+-[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.me/onqtam/10)
++[Patreon](http://www.patreon.com/onqtam)  
++[PayPal](https://www.paypal.me/onqtam/10)  
+ 
+ ------------
+ 
+--- a/README.md
++++ b/README.md
+@@ -29,15 +29,15 @@
+ 
+ **doctest** is a new C++ testing framework but is by far the fastest both in compile times (by [**orders of magnitude**](doc/markdown/benchmarks.md)) and runtime compared to other feature-rich alternatives. It brings the ability of compiled languages such as [**D**](https://dlang.org/spec/unittest.html) / [**Rust**](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html) / [**Nim**](https://nim-lang.org/docs/unittest.html) to have tests written directly in the production code thanks to a fast, transparent and flexible test runner with a clean interface.
+ 
+-[![Standard](https://img.shields.io/badge/c%2B%2B-11/14/17/20-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)
+-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+-[![download](https://img.shields.io/badge/download%20%20-link-blue.svg)](https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h)
+-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/503/badge)](https://bestpractices.coreinfrastructure.org/projects/503)
+-[![Chat - Discord](https://img.shields.io/badge/chat-Discord-blue.svg)](https://discord.gg/PGXn9YmyF3)
+-[![Try it online](https://img.shields.io/badge/try%20it-online-orange.svg)](https://godbolt.org/z/4s389Kbfs)
++[Standard](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)  
++[License](https://opensource.org/licenses/MIT)  
++[download](https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h)  
++[CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/503)  
++[Chat - Discord](https://discord.gg/PGXn9YmyF3)  
++[Try it online](https://godbolt.org/z/4s389Kbfs)  
+ <!--
+-[![Language](https://img.shields.io/badge/language-C++-blue.svg)](https://isocpp.org/)
+-[![documentation](https://img.shields.io/badge/documentation%20%20-online-blue.svg)](https://github.com/doctest/doctest/blob/master/doc/markdown/readme.md#reference)
++[Language](https://isocpp.org/)  
++[documentation](https://github.com/doctest/doctest/blob/master/doc/markdown/readme.md#reference)  
+ -->
+ 
+ [<img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" align="right">](https://www.patreon.com/onqtam)
+@@ -81,7 +81,7 @@
+ 
+ Checkout the [**CppCon 2017 talk**](https://cppcon2017.sched.com/event/BgsI/mix-tests-and-production-code-with-doctest-implementing-and-using-the-fastest-modern-c-testing-framework) on [**YouTube**](https://www.youtube.com/watch?v=eH1CxEC29l8) to get a better understanding of how the framework works and read about how to use it in [**the JetBrains article**](https://blog.jetbrains.com/rscpp/better-ways-testing-with-doctest/) - highlighting the unique aspects of the framework! On a short description on how to use the framework along production code you could refer to [**this GitHub issue**](https://github.com/doctest/doctest/issues/252). There is also an [**older article**](https://accu.org/var/uploads/journals/Overload137.pdf) in the february edition of ACCU Overload 2017.
+ 
+-[![CppCon 2017 talk about doctest on youtube](scripts/data/youtube-cppcon-talk-thumbnail.png)](https://www.youtube.com/watch?v=eH1CxEC29l8)
++[CppCon 2017 talk about doctest on youtube](https://www.youtube.com/watch?v=eH1CxEC29l8)
+ 
+ Documentation
+ -------------
+@@ -124,14 +124,9 @@
+ 
+ Contributions in the form of issues and pull requests are welcome as well - check out the [**Contributing**](CONTRIBUTING.md) page.
+ 
+-Stargazers over time
+-------------
+-
+-[![Stargazers over time](https://starchart.cc/doctest/doctest.svg)](https://starchart.cc/doctest/doctest)
+-
+ Logo
+ ------------
+ 
+-The [logo](scripts/data/logo) is licensed under a Creative Commons Attribution 4.0 International License. Copyright &copy; 2019 [area55git](https://github.com/area55git) &nbsp; [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
++The [logo](scripts/data/logo) is licensed under a Creative Commons Attribution 4.0 International License. Copyright &copy; 2019 [area55git](https://github.com/area55git) &nbsp; [License: CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+ 
+ <p align="center"><img src="scripts/data/logo/icon_2.svg"></p>

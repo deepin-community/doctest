@@ -1,5 +1,255 @@
-template-repository (1.0-1) unstable; urgency=medium
+doctest (2.4.11-1) unstable; urgency=medium
 
-  * Initial release
+  [ upstream ]
+  * new release(s)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.6.2
+  * update and unfuzz patch
+  * update copyright info: update coverage
+  * orphan package
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 06 Jul 2023 19:56:11 +0200
+
+doctest (2.4.9~ds-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * drop patch cherry-picked upstream now applied
+  * update and unfuzz patches
+  * declare compliance with Debian Policy 4.6.1
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 17 Sep 2022 14:44:56 +0200
+
+doctest (2.4.8~ds-2) unstable; urgency=medium
+
+  * add patch cherry-picked upstream
+    to fix move-only types failing to decompose correctly;
+    closes: bug#1005500, thanks to Andreas Tille and Nilesh Patra
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 20 Apr 2022 20:48:38 +0200
+
+doctest (2.4.8~ds-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * update copyright info: update coverage
+  * drop patch: applied upstream
+  * add patch 2001 to avoid privacy breaches in documentation
+  * build html and plaintext documentation from markdown sources;
+    build-depend on cmark-gfm (not doxygen)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 14 Jan 2022 22:32:17 +0100
+
+doctest (2.4.6+repack0-3) unstable; urgency=medium
+
+  * adopt package:
+    + add myself as maintainer;
+      closes: bug#993493, thanks to Didier 'OdyX' Raboud for past work
+  * set Rules-Requires-Root: no
+  * drop gitlab CI file, unused by my way of maintaining packages
+  * update git-buildpackage config:
+    + sign tags;
+    + use pristine-tar;
+    + filter-out any .git* file;
+    + use branch name debian/latest (not debian/master);
+    + stop set meta;
+    + add usage comment
+  * rename and renumber patch as 1001_GCC_11.patch;
+    + add file debian/patches/README to source,
+      documenting patch naming micro-policy
+  * update patch to use DEP-3 header
+  * drop git-dpm hint file (no longer used)
+  * update watch file:
+    + simplify filename mangling; use substitution strings
+    + add usage comment
+    + set dversionmangle=auto; use repack suffix ~ds
+  * update copyright info:
+    + fix drop License field MIT: duplicate of Expat
+    + list Github issue tracker as preferred upstream contact
+    + merge Files sections
+      with identical copyright holders and license
+    + normalize file and copyright holder lists
+    + cover logo files, licensed CC-BY-4.0
+    + add references for main licensed files
+    + cover my packaging contributions, licensed GPL-3+;
+      add related lintian overrides
+    + generally add License-Grants
+  * use semantic newlines in long description and copyright fields
+  * add source helper script copyright-check
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 14 Jan 2022 21:05:18 +0100
+
+doctest (2.4.6+repack0-2) unstable; urgency=medium
+
+  * Orphan package
+
+  * Migrate to unstable
+  * S-V: Update to 4.6.0 without changes needed
+  * Fix building on GCC-11 thanks to upstream's PR #520
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 02 Sep 2021 08:51:30 +0200
+
+doctest (2.4.6+repack0-1) experimental; urgency=medium
+
+  * Update to new upstream version 2.4.6+repack0
+  * Refresh d/copyright and bump S-V to 4.5.1 without changes needed
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 06 Apr 2021 18:50:10 +0200
+
+doctest (2.4.5+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.4.5+repack0
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 10 Feb 2021 08:49:19 +0100
+
+doctest (2.4.4+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.4.4+repack0.
+  * Update watch file format version to 4.
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 29 Dec 2020 11:18:36 +0100
+
+doctest (2.4.1+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.4.1+repack0
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 06 Nov 2020 18:32:32 +0100
+
+doctest (2.4.0+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.4.0+repack0
+
+ -- Didier Raboud <odyx@debian.org>  Tue, 30 Jun 2020 13:10:23 +0200
+
+doctest (2.3.8+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.3.8+repack0.
+  * Bump debhelper from old 12 to 13.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 25 May 2020 21:36:27 +0200
+
+doctest (2.3.7+repack0-1) unstable; urgency=medium
+
+  * Update to new upstream version 2.3.7+repack0
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Bump Standards-Version to 4.5.0 without changes needed
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 28 Feb 2020 11:02:29 +0100
+
+doctest (2.3.6+repack0-1) unstable; urgency=medium
+
+  * New 2.3.6+repack0 upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 23 Dec 2019 18:03:46 +0100
+
+doctest (2.3.5+repack0-1) unstable; urgency=medium
+
+  * New 2.3.5 upstream release
+
+  * Unset redundant upstream metadata
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 27 Sep 2019 10:50:55 +0200
+
+doctest (2.3.4+repack0-1) unstable; urgency=medium
+
+  * New 2.3.4 upstream release, to unstable
+
+  * Update standards version, no changes needed.
+  * Set upstream metadata fields: Contact, Name.
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 18 Aug 2019 17:50:56 +0200
+
+doctest (2.3.3+repack0-2) experimental; urgency=medium
+
+  * Add gitlab-ci configuration for Salsa
+  * Use dpkg-buildflags' CXXFLAGS with CPPFLAGS appended to circumvent CMake
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 21 Jun 2019 17:27:54 +0200
+
+doctest (2.3.3+repack0-1) experimental; urgency=medium
+
+  * New 2.3.3 upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 21 Jun 2019 16:42:28 +0200
+
+doctest (2.3.2+repack0-1) experimental; urgency=medium
+
+  * New 2.3.2 upstream release
+
+  * debian/rules improvements:
+    - Configure to use C++11, not C++98
+    - Override CMAKE_INSTALL_LIBDIR to leave the CMake configurations
+      in an arch-indep location
+    - Fix dh_compress -X' syntax
+  * Bump S-V to 4.3.0
+  * Bump debhelper compat to 12
+  * Install examples
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 19 May 2019 10:43:03 +0200
+
+doctest (1.2.9+repack0-1) unstable; urgency=medium
+
+  * New 1.2.9 upstream release
+  * Bump S-V to 4.1.4 without changes needed
+  * Bump debhelper compat to 11
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 14 May 2018 14:37:40 +0200
+
+doctest (1.2.8+repack0-1) unstable; urgency=medium
+
+  * New 1.2.8 upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 10 Mar 2018 15:17:36 +0100
+
+doctest (1.2.7+repack0-2) unstable; urgency=medium
+
+  * Cleanup d/control thanks to `cme update dpkg-control`
+  * Update Vcs-* for the move to Salsa
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 23 Feb 2018 20:52:58 +0100
+
+doctest (1.2.7+repack0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 09 Feb 2018 00:10:27 +0100
+
+doctest (1.2.6+repack0-2) unstable; urgency=medium
+
+  * Initialize git-dpm; add patch:
+    - Correct DOCTEST_NO_INSTALL logic; do install unless it is set
+      (Closes: #880721)
+  * Actually verify that the mandatory files are really installed
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 04 Nov 2017 15:28:11 +0100
+
+doctest (1.2.6+repack0-1) unstable; urgency=medium
+
+  * New 1.2.6 release
+    - doc/html_generated is removed; as it contains strapdown.js and a minified
+      Bootstrap CSS
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 02 Nov 2017 18:24:37 +0100
+
+doctest (1.2.5+repack0-2) unstable; urgency=medium
+
+  * Mark doctest-dev Multi-Arch: foreign
+  * As upstream tarball is repacked, mangle the version in debian/watch
+  * Add debian/gbp.conf
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 23 Oct 2017 13:22:45 +0200
+
+doctest (1.2.5+repack0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #879103)
+
+  * Repack the original 1.2.5:
+    - doc/html_generated is removed; as it contains strapdown.js and a minified
+      Bootstrap CSS
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 20 Oct 2017 08:48:53 +0200
